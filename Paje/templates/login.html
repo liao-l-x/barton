@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登入界面</title>
+    <link rel="stylesheet" href="{{static_url('css/登录界面.css')}}">
+</head>
+<body>
+<!--主框架-->
+<img class="logo" src="{{static_url('images/logo.png')}}" alt="智慧畜禽养殖系统logo" title="智慧畜禽养殖系统logo"/>
+<div class="jiemain">
+    <div class="geban"></div>
+    <!--登录文字-->
+    <div class="shang">
+        <h1>
+            用户登录
+        </h1>
+    </div>
+    <!--提示-->
+    <div class="zhong">
+        <p style="text-align: center;font-size: 10px;color: #062d78">
+            -------------------------------欢迎登录畜禽养殖系统-------------------------------
+        </p>
+    </div>
+    <div class="xia">
+        <form method="post" action="/log.html">
+            <div class="username" style="margin-top: 40px;">
+                <div class="username-color">
+                    <img src="{{static_url('images/ren.png')}}" alt="用户名" class="im" title="用户名">
+                </div>
+                <input type="text" class="input" placeholder="请输入用户名" id="inputEmail" name="username" value="{{username}}">
+            </div>
+            <div class="username" style="margin-top: 10px">
+                <div class="username-color">
+                    <img src="{{static_url('images/suo.png')}}" alt="密码" class="im" title="密码" >
+                </div>
+                <input type="password" class="input" placeholder="请输入密码" id="inputPassword"  name="userpwd" value="{{userpwd}}">
+            </div>
+            <button type="submit" class="submit" id="dl">登录</button>
+        </form>
+    </div>
+</div>
+<script src="{{static_url('js/common.js')}}"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("../images/beijing.jpg");
+    background-size:cover;
+
+}
+.logo{
+    margin: 40px 40px;
+}
+.jiemain{
+    position: absolute;
+    margin-left: 550px;
+    margin-top: 100px;
+    width: 460px;
+    height: 300px;
+    background-size:cover;
+    box-shadow: 2px 4px 4px 2px #4b4b4b;
+}
+.geban{
+    width: 100%;
+    height: 15px;
+}
+.shang{
+    width: 100%;
+    height: 50px;
+}
+h1{
+    margin-top: 10px;
+    width: 460px;
+    height: 50px;
+    font-size: 25px;
+    text-align:center;
+    vertical-align:middle;
+    color: #062d78;
+}
+.zhong{
+    margin-top: 2px;
+    width: 100%;
+    height: 20px;
+}
+.xia{
+    margin-top: 2px;
+    width: 100%;
+    height: 221px;
+}
+.username{
+    margin-left: 105px;
+    width: 250px;
+    height: 30px;
+    border: 2px solid #062d78;
+    border-width: 0 0 2px 0;
+}
+.username-color{
+    float: left;
+    height: 30px;
+    width: 36px;
+
+}
+.im{
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.input{
+    background-color:rgba(0,0,0,0);
+    height: 30px;
+    width: 214px;
+    float: right;
+    border: none;
+}
+.submit{
+    margin-left: 109px;
+    margin-top: 20px;
+    width: 250px;
+    height: 30px;
+    border: none;
+    background-color: #0066c5;
+}

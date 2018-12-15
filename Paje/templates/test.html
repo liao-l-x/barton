@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button onclick="shufun()">dfhvkjdvj</button>
+<script src="{{static_url('./js/jquery-3.3.1.js')}}"></script>
+ <script>
+        function shufun() {
+            $.ajax({
+                url:'index.html',
+                type:'get',
+                data:{},
+                success:function (arg) {
+                    alert(arg)
+                }
+            })
+        }
+    </script>
+</body>
+</html>
