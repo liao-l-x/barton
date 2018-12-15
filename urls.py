@@ -1,5 +1,6 @@
 import tornado.web
 from View import log,index,test
+from View.sql import seosor_data_select
 
 setting = {
     'template_path': 'Paje/templates',
@@ -9,8 +10,12 @@ setting = {
 
 application = tornado.web.Application([
     (r"/log.html",log.log,),
-    # (r'/index.html',index.index),
+    (r'/dm.html',index.index_dm),
     (r'/test.html',test.test ),
+
+
+
+    (r'/dm_data.html',seosor_data_select.dm_data),
 
 ],**setting)
 

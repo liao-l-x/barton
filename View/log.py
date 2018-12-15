@@ -16,7 +16,7 @@ class log(tornado.web.RequestHandler):
             if z_user[0]['userpwd']== userpwd :
                 # session().session_add(info=z_user,user=self) #添加session
                 self.set_cookie('is_login',session().session_add(info=z_user))
-                self.redirect("/index.html")#登入成功转跳到主页
+                self.redirect("/dm.html")#登入成功转跳到主页
         else:
             self.render("login.html",
                         username=username,

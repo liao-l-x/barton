@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态监控</title>
+    <style>
+        .shang{
+            height: 100px;
+            width: 100%;
+            background-color: #365cff;
+        }
+        .logo{
+            width: 450px;
+            height: 94px;
+            margin: 10px;
+        }
+        .zhong{
+            height: 80px;
+            width: 100%;
+        }
+        h1{
+            height: 80px;
+            font-size: 40px;
+            margin: 18px 20px;
+            font-family:"楷体",Georgia,Serif;
+            float: left;
+         }
+        h3{
+            float: left;
+            font-size: 24px;
+            margin: 35px 17px;
+            font-family:"新宋体",Georgia,Serif;
+        }
+        .xian{
+            height: 14px;
+            width: 100%;
+            background-color: #00a0ea;
+        }
+        .xia{
+            height: 610px;
+            width: 100%;
+        }
+        .monitor{
+            margin: 100px;
+            width: 400px;
+            height: 300px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+<div class="shang">
+    <img class="logo" src="{{static_url('images/logo.png')}}" alt="logo" title="logo"/>
+    <a href="#"><img src="{{static_url('images/动态监控.png')}}" alt="" style="margin-left: 350px"></a>
+    <a href="#"><img src="{{static_url('images/数据追溯.png')}}" alt=""></a>
+    <a href="#"><img src="{{static_url('images/阈值设定.png')}}" alt=""></a>
+    <a href="#"><img src="{{static_url('images/退出按钮.png')}}" alt="" style="float: right"></a>
+</div>
+<div class="zhong">
+   {% block  zhong%}{%end%}
+</div>
+<div class="xian"></div>
+<div class="xia">
+    {% block  xia%}{%end%}
+</div>
+<script src="{{static_url('js/jquery-3.3.1.js')}}"></script>
+<script src="{{static_url('js/monitoring.js')}}"></script>
+
+</body>
+</html>
