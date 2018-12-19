@@ -19,15 +19,33 @@ def sersor_data_insert(data,sid):
 
 def sersor_data_select(sid):
     """
+    查一条数据
     :param sid: 传感器id
-    :return: 时间最近的传感器数据
+    :return: 时间最近的一条传感器数据
     """
     conn = pymysql.connect(host='192.168.31.215', port=3306, user='barton', passwd='123456', db='barton',
                            charset='utf8')
     # 创建游标
     cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
-    cursor.execute("select s_dm,s_dtime from sersor_data where s_d_sid=%s order by s_dtime limit 0,1",(sid))
+    cursor.execute("select s_dm,s_dtime from sersor_data where s_d_sid=%s order by s_dtime desc limit 0,1",(sid))
     data = cursor.fetchall() #获取信息
+    conn.commit()
+    cursor.close()
+    conn.close()
+    return data
+
+def sersor_history_select(sid):
+    """
+
+    :param sid: 传感器id
+    :return: 后X 条数据
+    """
+    conn = pymysql.connect(host='192.168.31.215', port=3306, user='barton', passwd='123456', db='barton',
+                           charset='utf8')
+    # 创建游标
+    cursor = conn.cursor(cursor=pymysql.cursors.DictCursor)
+    cursor.execute("select s_dm,s_dtime from sersor_data where s_d_sid=%s order by s_dtime desc  limit 0,10", (sid))
+    data = cursor.fetchall()  # 获取信息
     conn.commit()
     cursor.close()
     conn.close()

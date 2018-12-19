@@ -1,3 +1,6 @@
+function my$(id){
+    return document.getElementById(id)
+}
 $(function () {
     var myDate=new Date();
     //获取年份

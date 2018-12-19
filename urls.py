@@ -13,9 +13,8 @@ application = tornado.web.Application([
     (r'/dm.html',index.index_dm),
     (r'/test.html',test.test ),
 
-
-
     (r'/dm_data.html',seosor_data_select.dm_data),
+    (r'/history_data.html',seosor_data_select.history_data),
 
 ],**setting)
 

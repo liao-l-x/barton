@@ -6,8 +6,48 @@
     <h3 id="year"></h3>
 {%end%}
 {% block  xia%}
-<!--<div class="monitor"></div>-->
-<p>fkjehoweuhfoejrhfhjnwdkeohfreiofherio</p>
-{%end%}
+ <div class="monitor">
+        <ul style="list-style-type: none">
+            <li><span id="Temp"></span></li>
+            <li><span id="Humi"></span></li>
+            <li><span id="Light"></span></li>
+            <li><span id="Gas"></span></li>
+            <li><span id="Co2"></span></li>
+            <li><span id="Air"></span></li>
+            <li><span id="Wind"></span></li>
+        </ul>
+ </div>
 
+
+{% end %}
+{% block  js%}
+
+<script>
+    function shufun() {
+        $.ajax({
+            url:'/dm_data.html',
+            type:'post',
+            data:{},
+            success:function (arg) {
+
+                f1(arg);
+            }
+        });
+        function f1(arg){
+            my$("Temp").innerHTML="温度传感器："+arg["1"];
+            my$("Humi").innerHTML="湿度传感器："+arg["2"];
+            my$("Light").innerHTML="光照传感器："+arg["3"];
+            my$("Gas").innerHTML="有害气体传感器："+arg["4"];
+            my$("Co2").innerHTML="二氧化碳传感器："+arg["5"];
+            my$("Air").innerHTML="气压传感器："+arg["6"];
+            my$("Wind").innerHTML="风速传感器："+arg["7"];
+
+        }
+
+    }
+    shufun();
+
+</script>
+
+{%end%}
 
