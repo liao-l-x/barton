@@ -45,7 +45,37 @@
         }
 
     }
-    shufun();
+     var ws = new WebSocket("ws://192.168.31.134:8080/dm_cr");
+         ws.onmessage = function(e) {
+             var  dict = $.parseJSON(e.data)
+             switch (dict["Sn"]){
+                 case "1":
+                     my$("Temp").innerHTML="温度传感器："+dict["Sd"];
+                     break;
+                 case "2":
+                     my$("Humi").innerHTML="湿度传感器："+dict["Sd"];
+                     break;
+                 case "3":
+                     my$("Light").innerHTML="光照传感器："+dict["Sd"];
+                     break;
+                 case "4":
+                     my$("Gas").innerHTML="有害气体传感器："+dict["Sd"];
+                     break;
+                 case "5":
+                     my$("Co2").innerHTML="二氧化碳传感器："+dict["Sd"];
+                     break;
+                 case "6":
+                     my$("Air").innerHTML="气压传感器："+dict["Sd"];
+                     break;
+                 case "7":
+                      my$("Wind").innerHTML="风速传感器："+dict["Sd"];
+                     break;
+             }
+
+              // my$("Temp").innerHTML="温度传感器："+e.data;
+            //  $("#monitor").append("<p>" + e.data + "</p>");
+         }
+    // shufun();
 
 </script>
 
